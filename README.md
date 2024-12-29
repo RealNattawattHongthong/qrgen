@@ -38,6 +38,26 @@ qr-code-generator
 3. Click the "Generate QR Code" button to create the QR code.
 4. The generated QR code will be displayed on the page, and you can download it if needed.
 
+## GitHub Pages Deployment
+
+This project is configured to be deployed to GitHub Pages using GitHub Actions. Follow these steps to set up the deployment:
+
+1. Ensure you have a `gh-pages` branch in your repository. If not, create one:
+   ```
+   git checkout --orphan gh-pages
+   git reset --hard
+   git commit --allow-empty -m "Initialize gh-pages branch"
+   git push origin gh-pages
+   git checkout main
+   ```
+
+2. Update the `homepage` field in `package.json` to point to your GitHub Pages URL:
+   ```json
+   "homepage": "https://<your-username>.github.io/<repository-name>"
+   ```
+
+3. Push your changes to the `main` branch. The GitHub Actions workflow will automatically deploy the site to GitHub Pages.
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or features you'd like to add.
